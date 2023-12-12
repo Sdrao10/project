@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Simple web Development Template</title>
+		<link rel="stylesheet" href="/static/Css/style.css" />
+	</head>
+
+	<body>
+		<header>
+			<nav class="navbar background">
+				<ul class="nav-list">
+					<div class="logo">
+						<img src="/static/media/img1.jpg" />
+					</div>
+
+					<li class="{% if request.path == '/' %} active {% endif %}">
+						<a href="{% url 'home' %}">Home</a>
+					</li>
+					<li class="{% if request.path == '/Web' %} active {% endif %}">
+						<a href="{% url 'Web' %}">Web Technology</a>
+					</li>
+					<li class="{% if request.path == '/C' %} active {% endif %}">
+						<a href="{% url 'Cpro' %}">C Programming</a>
+					</li>
+					<li class="{% if request.path == '/course' %} active {% endif %}">
+						<a href="{% url 'courses' %}">Courses</a>
+					</li>
+					<li class="{% if request.path == '/about-us' %} active {% endif %}">
+						<a href="{% url 'about' %}">About us</a>
+					</li>
+				</ul>
+
+				<div class="rightNav">
+					<input type="text" name="search" id="search" />
+					<button class="btn btn-sm">Search</button>
+				</div>
+			</nav>
+		</header>
